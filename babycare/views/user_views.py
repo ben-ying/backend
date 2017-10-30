@@ -122,14 +122,14 @@ class UserViewSet(CustomModelViewSet):
                 self.perform_create(serializer)
                 response_data = serializer.data
                 response_data['token'] = Token.objects.create(user=user).key
+                baby_user = BabyUser.objects.get(user=user)
+                baby_user.locale = response_data['locale']
+                baby_user.created = timezone.now()
                 if base64:
                     image_name = username + time.strftime('%Y%m%d%H%M%S') + PROFILE_FOOTER_IMAGE
                     response_data['profile'] = upload_file_to_oss(user.username + DIR_USER_PROFILE + image_name, base64)
-                    baby_user = BabyUser.objects.get(user=user)
                     baby_user.profile = response_data['profile']
-                    baby_user.locale = response_data['locale']
-                    baby_user.created = timezone.now()
-                    baby_user.save()
+                baby_user.save()
                 return json_response(response_data, CODE_SUCCESS, MSG_CREATE_USER_SUCCESS)
             else:
                 return simple_json_response(CODE_INVALID_REQUEST, MSG_400)
