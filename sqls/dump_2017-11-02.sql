@@ -1029,8 +1029,9 @@ SELECT pg_catalog.setval('auth_permission_id_seq', 54, true);
 COPY auth_user (id, password, last_login, is_superuser, username, first_name, last_name, email, is_staff, is_active, date_joined) FROM stdin;
 2	pbkdf2_sha256$30000$nzAqq8taQAaE$y9K4AWOxm2sEaWHmdfOjPjldhpx90H6oNNflUo3NGPk=	\N	f	babycare			babycare.ben@gmail.com	t	t	2017-05-26 16:29:52.490171+08
 5	pbkdf2_sha256$30000$eDvdYVfHriZq$RY0V8QCr7dfy2CFl68I4xmDc0Hzt3j4piRNB++6C9oM=	\N	f	lisq			455677560@qq.com	t	t	2017-08-04 15:56:20.326447+08
-7	pbkdf2_sha256$30000$vcGxU0Ybu44n$koWcE/Z7M8vBR+Kivs5WoZxZi1WChIW7Ax6jVG98kO0=	\N	f	Emily			616897923@qq.com	t	t	2017-10-14 17:11:48.133299+08
-1	pbkdf2_sha256$30000$2j8nisBGCA4o$HKfUAjblumCQYZ+li0fVoy3/MDRteQjG+oDojkVAHto=	2017-10-14 20:33:54.206372+08	t	ben			benying1988@gmail.com	t	t	2017-05-26 16:28:41.571397+08
+8	pbkdf2_sha256$30000$kKiZhcQIgj0I$hDHGvicNH4UhB2y28dB1Ywlg73FtQ+R2UAQBcocUm4I=	\N	f	emily			616897923@qq.com	t	t	2017-10-18 16:59:47.969802+08
+1	pbkdf2_sha256$30000$2j8nisBGCA4o$HKfUAjblumCQYZ+li0fVoy3/MDRteQjG+oDojkVAHto=	2017-10-23 11:22:13+08	t	admin			benying1988@gmail.com	t	t	2017-05-26 16:28:41+08
+11	pbkdf2_sha256$30000$FBWCon4ho08J$a+15YBU72O0BttXN9E1B3mt37Df5dOzCXJXvpquMWck=	\N	f	ben			380668771@qq.com	t	t	2017-10-25 14:02:33.760052+08
 \.
 
 
@@ -1053,7 +1054,7 @@ SELECT pg_catalog.setval('auth_user_groups_id_seq', 1, false);
 -- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ben
 --
 
-SELECT pg_catalog.setval('auth_user_id_seq', 7, true);
+SELECT pg_catalog.setval('auth_user_id_seq', 11, true);
 
 
 --
@@ -1078,7 +1079,8 @@ SELECT pg_catalog.setval('auth_user_user_permissions_id_seq', 1, false);
 COPY authtoken_token (key, created, user_id) FROM stdin;
 1272dc0fe06c52383c7a9bdfef33255b940c195b	2017-05-26 16:29:52.530902+08	2
 d87fd853962ab5cb95a22d063367c24476a3a4ec	2017-08-04 15:56:20.607313+08	5
-beefdcf9ef7061c505bda152e5613a7e2eca549f	2017-10-14 17:11:48.17069+08	7
+a989f981b2a5c4283835e94d9565a7c81ea3a3b8	2017-10-18 16:59:48.007198+08	8
+78a3c646f1bd29dc886b1ebc98cc8b81c8c680d6	2017-10-25 14:02:33.797325+08	11
 \.
 
 
@@ -1106,7 +1108,8 @@ SELECT pg_catalog.setval('babycare_appinfo_id_seq', 6, true);
 COPY babycare_babyuser (id, baby_name, phone, gender, profile, type, region, locale, whats_up, zone, birth, hobbies, highlighted, created, modified, is_email_activate, is_phone_activate, user_id) FROM stdin;
 1	嘟嘟	\N	0	https://bensbabycare.oss-cn-hangzhou.aliyuncs.com/babycare/profile/babycare20170616163521_profile.jpg	0	\N	\N	\N	Asia/Shanghai	\N	\N	\N	\N	2017-06-16 16:35:21.743079+08	f	f	2
 4	test	\N	0	\N	0	\N	\N	\N	Asia/Shanghai	\N	\N	\N	\N	2017-08-04 15:56:20.591056+08	f	f	5
-6	Emily	\N	0	\N	0	\N	\N	\N	Asia/Shanghai	\N	\N	\N	\N	2017-10-14 17:11:48.16766+08	f	f	7
+7	嘟嘟	\N	0	\N	0	\N	\N	\N	Asia/Shanghai	\N	\N	\N	\N	2017-10-18 16:59:48.004229+08	f	f	8
+10	ben	\N	2	\N	0	\N	\N	\N	\N	\N	\N	\N	\N	2017-10-25 14:02:33.794502+08	f	f	11
 \.
 
 
@@ -1114,7 +1117,7 @@ COPY babycare_babyuser (id, baby_name, phone, gender, profile, type, region, loc
 -- Name: babycare_babyuser_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ben
 --
 
-SELECT pg_catalog.setval('babycare_babyuser_id_seq', 6, true);
+SELECT pg_catalog.setval('babycare_babyuser_id_seq', 10, true);
 
 
 --
@@ -1175,6 +1178,11 @@ SELECT pg_catalog.setval('babycare_feedback_id_seq', 3, true);
 --
 
 COPY babycare_iaer (id, money, category, money_type, remark, created, type, chart_type, format, datetime, description, timing, user_id) FROM stdin;
+32	-55	餐饮	0	老婆大人零食	2017-10-26 09:03:24.445768+08	0	0	\N	2017-10-26 09:03:24.446111+08	\N	\N	10
+33	-279	其他	0	树莓派3b	2017-10-26 10:03:31.877377+08	0	0	\N	2017-10-26 10:05:28.234898+08	\N	\N	10
+31	-179	其他	0	BroadLink RM pro	2017-10-25 14:10:01.284436+08	0	0	\N	2017-10-26 10:05:36.61402+08	\N	\N	10
+34	-105	其它	0	SanDisk TF卡	2017-10-26 10:12:48.612084+08	0	0	\N	2017-10-26 10:12:48.612456+08	\N	\N	10
+35	-102	其它	0	micro sd卡和零食	2017-10-27 19:44:36.671843+08	0	0	\N	2017-10-27 19:44:36.672155+08	\N	\N	10
 \.
 
 
@@ -1182,7 +1190,7 @@ COPY babycare_iaer (id, money, category, money_type, remark, created, type, char
 -- Name: babycare_iaer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ben
 --
 
-SELECT pg_catalog.setval('babycare_iaer_id_seq', 1, true);
+SELECT pg_catalog.setval('babycare_iaer_id_seq', 35, true);
 
 
 --
@@ -1258,8 +1266,9 @@ COPY babycare_redenvelope (id, money, money_type, money_from, remark, created, b
 45	2000	0	老婆老板	出生红包	2017-08-05 09:38:17.605805+08	1
 139	-66	0	餐饮	很久	2017-09-20 11:17:45.92158+08	1
 140	-28	0	服饰	但	2017-09-20 13:39:26.054889+08	1
-141	-66	0	收入	不会	2017-09-20 14:12:17.883001+08	1
-142	-669	0	服饰	黄家驹	2017-09-20 14:12:29.268107+08	1
+143	508	0	外婆	见面红包	2017-10-19 21:17:47.148152+08	1
+144	300	0	沙村嬷嬷	见面红包	2017-10-19 21:18:07.891939+08	1
+145	660	0	五姐	满月红包	2017-10-19 21:18:55.11675+08	1
 \.
 
 
@@ -1267,7 +1276,7 @@ COPY babycare_redenvelope (id, money, money_type, money_from, remark, created, b
 -- Name: babycare_redenvelope_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ben
 --
 
-SELECT pg_catalog.setval('babycare_redenvelope_id_seq', 142, true);
+SELECT pg_catalog.setval('babycare_redenvelope_id_seq', 145, true);
 
 
 --
@@ -1276,6 +1285,7 @@ SELECT pg_catalog.setval('babycare_redenvelope_id_seq', 142, true);
 
 COPY babycare_verify (id, email_verify_code, phone_verify_code, created, baby_id) FROM stdin;
 2	289457	\N	2017-06-24 07:31:49.886294+08	1
+3	874010	\N	2017-10-31 10:00:43.587498+08	10
 \.
 
 
@@ -1283,7 +1293,7 @@ COPY babycare_verify (id, email_verify_code, phone_verify_code, created, baby_id
 -- Name: babycare_verify_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ben
 --
 
-SELECT pg_catalog.setval('babycare_verify_id_seq', 2, true);
+SELECT pg_catalog.setval('babycare_verify_id_seq', 3, true);
 
 
 --
@@ -1416,6 +1426,21 @@ COPY django_admin_log (id, action_time, object_id, object_repr, action_flag, cha
 123	2017-10-14 17:08:50.216404+08	6	11	3		3	1
 124	2017-10-14 20:35:23.488495+08	1	Iaer object	1	[{"added": {}}]	18	1
 125	2017-10-14 20:35:44.123929+08	1	Iaer object	3		18	1
+126	2017-10-18 10:50:29.477356+08	3	Iaer object	3		18	1
+127	2017-10-18 10:50:29.480329+08	4	Iaer object	3		18	1
+128	2017-10-18 10:50:29.482076+08	5	Iaer object	3		18	1
+129	2017-10-18 10:50:29.483906+08	2	Iaer object	3		18	1
+130	2017-10-18 16:52:16.740808+08	7	Emily	2	[{"changed": {"fields": ["is_superuser"]}}]	3	1
+131	2017-10-18 16:57:51.660403+08	7	Emily	3		3	1
+132	2017-10-23 11:22:44.49896+08	11	Iaer object	3		18	1
+133	2017-10-23 11:22:44.501701+08	7	Iaer object	3		18	1
+134	2017-10-25 10:36:02.713168+08	8	hshsj@djdjdj.com(test)	3		11	1
+135	2017-10-25 13:56:12.856166+08	1	admin	2	[{"changed": {"fields": ["username"]}}]	3	1
+136	2017-10-25 14:01:03.347613+08	9	380668771@qq.com(ben)	3		11	1
+137	2017-10-25 14:02:30.314688+08	10	ben	3		3	1
+138	2017-10-25 14:02:30.317198+08	9	test	3		3	1
+139	2017-10-26 10:05:28.237107+08	33	Iaer object	2	[{"changed": {"fields": ["money", "category"]}}]	18	1
+140	2017-10-26 10:05:36.615242+08	31	Iaer object	2	[{"changed": {"fields": ["category"]}}]	18	1
 \.
 
 
@@ -1423,7 +1448,7 @@ COPY django_admin_log (id, action_time, object_id, object_repr, action_flag, cha
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ben
 --
 
-SELECT pg_catalog.setval('django_admin_log_id_seq', 125, true);
+SELECT pg_catalog.setval('django_admin_log_id_seq', 140, true);
 
 
 --
@@ -1510,6 +1535,9 @@ cogq40tq5k45mtzsrmm84qruab6li2jh	Zjg4NTE3MzlhNmMzNTJhNzYwZDEzZjZiNmRjN2Q4NjI1ZWR
 96fakcfwmcuukg0otp9wk3g3at99oepg	Zjg4NTE3MzlhNmMzNTJhNzYwZDEzZjZiNmRjN2Q4NjI1ZWRjMTMwNjp7Il9hdXRoX3VzZXJfaGFzaCI6ImFjZTNjZmYwNzY0NDA2NzdjNDdkODhjMDBhNTU1MzJjYjZiN2IwYzkiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=	2017-10-28 16:54:37.192216+08
 emprgjr3tqki5jaouad863bi4ob7yyh4	Zjg4NTE3MzlhNmMzNTJhNzYwZDEzZjZiNmRjN2Q4NjI1ZWRjMTMwNjp7Il9hdXRoX3VzZXJfaGFzaCI6ImFjZTNjZmYwNzY0NDA2NzdjNDdkODhjMDBhNTU1MzJjYjZiN2IwYzkiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=	2017-10-28 17:12:14.816145+08
 e9h244eb638frg11iqgauplpvo9qt3f9	Zjg4NTE3MzlhNmMzNTJhNzYwZDEzZjZiNmRjN2Q4NjI1ZWRjMTMwNjp7Il9hdXRoX3VzZXJfaGFzaCI6ImFjZTNjZmYwNzY0NDA2NzdjNDdkODhjMDBhNTU1MzJjYjZiN2IwYzkiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=	2017-10-28 20:33:54.20908+08
+rm34i96sn32tuhxppk14sw4s5cbrzdjr	Zjg4NTE3MzlhNmMzNTJhNzYwZDEzZjZiNmRjN2Q4NjI1ZWRjMTMwNjp7Il9hdXRoX3VzZXJfaGFzaCI6ImFjZTNjZmYwNzY0NDA2NzdjNDdkODhjMDBhNTU1MzJjYjZiN2IwYzkiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=	2017-11-01 16:53:25.232287+08
+h2rdpatb1b09853iktkif7m7cbk1k7vs	Zjg4NTE3MzlhNmMzNTJhNzYwZDEzZjZiNmRjN2Q4NjI1ZWRjMTMwNjp7Il9hdXRoX3VzZXJfaGFzaCI6ImFjZTNjZmYwNzY0NDA2NzdjNDdkODhjMDBhNTU1MzJjYjZiN2IwYzkiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=	2017-11-04 08:26:22.066241+08
+u10uxr1th85v92htm49rl9h6l0v4v3w5	Zjg4NTE3MzlhNmMzNTJhNzYwZDEzZjZiNmRjN2Q4NjI1ZWRjMTMwNjp7Il9hdXRoX3VzZXJfaGFzaCI6ImFjZTNjZmYwNzY0NDA2NzdjNDdkODhjMDBhNTU1MzJjYjZiN2IwYzkiLCJfYXV0aF91c2VyX2JhY2tlbmQiOiJkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZCIsIl9hdXRoX3VzZXJfaWQiOiIxIn0=	2017-11-06 11:22:13.927972+08
 \.
 
 

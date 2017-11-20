@@ -1030,7 +1030,8 @@ COPY auth_user (id, password, last_login, is_superuser, username, first_name, la
 2	pbkdf2_sha256$30000$nzAqq8taQAaE$y9K4AWOxm2sEaWHmdfOjPjldhpx90H6oNNflUo3NGPk=	\N	f	babycare			babycare.ben@gmail.com	t	t	2017-05-26 16:29:52.490171+08
 5	pbkdf2_sha256$30000$eDvdYVfHriZq$RY0V8QCr7dfy2CFl68I4xmDc0Hzt3j4piRNB++6C9oM=	\N	f	lisq			455677560@qq.com	t	t	2017-08-04 15:56:20.326447+08
 8	pbkdf2_sha256$30000$kKiZhcQIgj0I$hDHGvicNH4UhB2y28dB1Ywlg73FtQ+R2UAQBcocUm4I=	\N	f	emily			616897923@qq.com	t	t	2017-10-18 16:59:47.969802+08
-1	pbkdf2_sha256$30000$2j8nisBGCA4o$HKfUAjblumCQYZ+li0fVoy3/MDRteQjG+oDojkVAHto=	2017-10-23 11:22:13.924464+08	t	ben			benying1988@gmail.com	t	t	2017-05-26 16:28:41.571397+08
+1	pbkdf2_sha256$30000$2j8nisBGCA4o$HKfUAjblumCQYZ+li0fVoy3/MDRteQjG+oDojkVAHto=	2017-10-23 11:22:13+08	t	admin			benying1988@gmail.com	t	t	2017-05-26 16:28:41+08
+11	pbkdf2_sha256$30000$FBWCon4ho08J$a+15YBU72O0BttXN9E1B3mt37Df5dOzCXJXvpquMWck=	\N	f	ben			380668771@qq.com	t	t	2017-10-25 14:02:33.760052+08
 \.
 
 
@@ -1053,7 +1054,7 @@ SELECT pg_catalog.setval('auth_user_groups_id_seq', 1, false);
 -- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ben
 --
 
-SELECT pg_catalog.setval('auth_user_id_seq', 8, true);
+SELECT pg_catalog.setval('auth_user_id_seq', 11, true);
 
 
 --
@@ -1079,6 +1080,7 @@ COPY authtoken_token (key, created, user_id) FROM stdin;
 1272dc0fe06c52383c7a9bdfef33255b940c195b	2017-05-26 16:29:52.530902+08	2
 d87fd853962ab5cb95a22d063367c24476a3a4ec	2017-08-04 15:56:20.607313+08	5
 a989f981b2a5c4283835e94d9565a7c81ea3a3b8	2017-10-18 16:59:48.007198+08	8
+78a3c646f1bd29dc886b1ebc98cc8b81c8c680d6	2017-10-25 14:02:33.797325+08	11
 \.
 
 
@@ -1107,6 +1109,7 @@ COPY babycare_babyuser (id, baby_name, phone, gender, profile, type, region, loc
 1	嘟嘟	\N	0	https://bensbabycare.oss-cn-hangzhou.aliyuncs.com/babycare/profile/babycare20170616163521_profile.jpg	0	\N	\N	\N	Asia/Shanghai	\N	\N	\N	\N	2017-06-16 16:35:21.743079+08	f	f	2
 4	test	\N	0	\N	0	\N	\N	\N	Asia/Shanghai	\N	\N	\N	\N	2017-08-04 15:56:20.591056+08	f	f	5
 7	嘟嘟	\N	0	\N	0	\N	\N	\N	Asia/Shanghai	\N	\N	\N	\N	2017-10-18 16:59:48.004229+08	f	f	8
+10	ben	\N	2	\N	0	\N	\N	\N	\N	\N	\N	\N	\N	2017-10-25 14:02:33.794502+08	f	f	11
 \.
 
 
@@ -1114,7 +1117,7 @@ COPY babycare_babyuser (id, baby_name, phone, gender, profile, type, region, loc
 -- Name: babycare_babyuser_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ben
 --
 
-SELECT pg_catalog.setval('babycare_babyuser_id_seq', 7, true);
+SELECT pg_catalog.setval('babycare_babyuser_id_seq', 10, true);
 
 
 --
@@ -1175,10 +1178,27 @@ SELECT pg_catalog.setval('babycare_feedback_id_seq', 3, true);
 --
 
 COPY babycare_iaer (id, money, category, money_type, remark, created, type, chart_type, format, datetime, description, timing, user_id) FROM stdin;
-8	-200	餐饮	0	can	2017-10-19 10:30:44.453596+08	0	0	\N	2017-10-19 10:30:44.45392+08	\N	\N	7
-9	66	生活用品	0	as	2017-10-19 10:31:42.779139+08	0	0	\N	2017-10-19 10:31:42.779674+08	\N	\N	7
-10	999	服饰	0	Ben	2017-10-19 10:32:25.851138+08	0	0	\N	2017-10-19 10:32:25.851483+08	\N	\N	7
-13	-36	餐饮	0	hj	2017-10-19 10:47:47.208477+08	0	0	\N	2017-10-19 10:47:47.208836+08	\N	\N	7
+32	-55	餐饮	0	老婆大人零食	2017-10-26 09:03:24.445768+08	0	0	\N	2017-10-26 09:03:24.446111+08	\N	\N	10
+33	-279	其他	0	树莓派3b	2017-10-26 10:03:31.877377+08	0	0	\N	2017-10-26 10:05:28.234898+08	\N	\N	10
+31	-179	其他	0	BroadLink RM pro	2017-10-25 14:10:01.284436+08	0	0	\N	2017-10-26 10:05:36.61402+08	\N	\N	10
+34	-105	其它	0	SanDisk TF卡	2017-10-26 10:12:48.612084+08	0	0	\N	2017-10-26 10:12:48.612456+08	\N	\N	10
+35	-102	其它	0	micro sd卡和零食	2017-10-27 19:44:36.671843+08	0	0	\N	2017-10-27 19:44:36.672155+08	\N	\N	10
+36	-199	其它	0	bandwagon vps	2017-11-02 11:21:48.634341+08	0	0	\N	2017-11-02 11:21:48.634727+08	\N	\N	10
+37	-159	生活用品	0	电饭煲	2017-11-02 18:40:40.375058+08	0	0	\N	2017-11-02 18:40:40.375373+08	\N	\N	7
+38	-100	餐饮	0	老婆大人	2017-11-02 18:40:59.408416+08	0	0	\N	2017-11-02 18:40:59.408886+08	\N	\N	7
+39	-26	餐饮	0	零食	2017-11-02 21:34:58.47793+08	0	0	\N	2017-11-02 21:34:58.478246+08	\N	\N	7
+40	-100	生活用品	0	话费	2017-11-03 17:34:42.91856+08	0	0	\N	2017-11-03 17:34:42.918906+08	\N	\N	10
+41	-1500	生活用品	0	生活费	2017-11-03 18:39:22.155274+08	0	0	\N	2017-11-03 18:39:22.155587+08	\N	\N	7
+42	-36	服饰	0	淘宝	2017-11-03 18:40:30.256204+08	0	0	\N	2017-11-03 18:40:30.256582+08	\N	\N	7
+43	-31	餐饮	0	阿香米线	2017-11-04 14:55:39.884817+08	0	0	\N	2017-11-04 14:55:39.88518+08	\N	\N	7
+44	-22	餐饮	0	KFC早餐	2017-11-05 09:43:16.61815+08	0	0	\N	2017-11-05 09:43:16.618476+08	\N	\N	7
+45	-11	孩子	0	挂号费	2017-11-05 09:43:34.429566+08	0	0	\N	2017-11-05 09:43:34.429934+08	\N	\N	7
+46	-183	孩子	0	咳嗽，感冒	2017-11-05 09:44:09.035628+08	0	0	\N	2017-11-05 09:44:09.035994+08	\N	\N	10
+47	-17	孩子	0	挂号费	2017-11-05 09:44:42.416552+08	0	0	\N	2017-11-05 09:44:42.416863+08	\N	\N	10
+48	-10	餐饮	0	蛋卷	2017-11-05 13:15:42.388377+08	0	0	\N	2017-11-05 13:15:42.388693+08	\N	\N	7
+49	-32	餐饮	0	2碗泡馍	2017-11-05 13:28:48.392915+08	0	0	\N	2017-11-05 13:28:48.393286+08	\N	\N	10
+51	-72	生活用品	0	眼镜2付	2017-11-05 20:27:33.211475+08	0	0	\N	2017-11-05 20:27:33.211794+08	\N	\N	10
+52	-22	生活用品	0	剪头发	2017-11-06 20:04:08.29547+08	0	0	\N	2017-11-06 20:04:08.295809+08	\N	\N	10
 \.
 
 
@@ -1186,7 +1206,7 @@ COPY babycare_iaer (id, money, category, money_type, remark, created, type, char
 -- Name: babycare_iaer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ben
 --
 
-SELECT pg_catalog.setval('babycare_iaer_id_seq', 30, true);
+SELECT pg_catalog.setval('babycare_iaer_id_seq', 52, true);
 
 
 --
@@ -1281,6 +1301,7 @@ SELECT pg_catalog.setval('babycare_redenvelope_id_seq', 145, true);
 
 COPY babycare_verify (id, email_verify_code, phone_verify_code, created, baby_id) FROM stdin;
 2	289457	\N	2017-06-24 07:31:49.886294+08	1
+3	874010	\N	2017-10-31 10:00:43.587498+08	10
 \.
 
 
@@ -1288,7 +1309,7 @@ COPY babycare_verify (id, email_verify_code, phone_verify_code, created, baby_id
 -- Name: babycare_verify_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ben
 --
 
-SELECT pg_catalog.setval('babycare_verify_id_seq', 2, true);
+SELECT pg_catalog.setval('babycare_verify_id_seq', 3, true);
 
 
 --
@@ -1429,6 +1450,13 @@ COPY django_admin_log (id, action_time, object_id, object_repr, action_flag, cha
 131	2017-10-18 16:57:51.660403+08	7	Emily	3		3	1
 132	2017-10-23 11:22:44.49896+08	11	Iaer object	3		18	1
 133	2017-10-23 11:22:44.501701+08	7	Iaer object	3		18	1
+134	2017-10-25 10:36:02.713168+08	8	hshsj@djdjdj.com(test)	3		11	1
+135	2017-10-25 13:56:12.856166+08	1	admin	2	[{"changed": {"fields": ["username"]}}]	3	1
+136	2017-10-25 14:01:03.347613+08	9	380668771@qq.com(ben)	3		11	1
+137	2017-10-25 14:02:30.314688+08	10	ben	3		3	1
+138	2017-10-25 14:02:30.317198+08	9	test	3		3	1
+139	2017-10-26 10:05:28.237107+08	33	Iaer object	2	[{"changed": {"fields": ["money", "category"]}}]	18	1
+140	2017-10-26 10:05:36.615242+08	31	Iaer object	2	[{"changed": {"fields": ["category"]}}]	18	1
 \.
 
 
@@ -1436,7 +1464,7 @@ COPY django_admin_log (id, action_time, object_id, object_repr, action_flag, cha
 -- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ben
 --
 
-SELECT pg_catalog.setval('django_admin_log_id_seq', 133, true);
+SELECT pg_catalog.setval('django_admin_log_id_seq', 140, true);
 
 
 --
