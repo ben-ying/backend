@@ -166,6 +166,7 @@ class Iaer(models.Model):
         (u'孩子', u'孩子'),
         (u'装修', u'装修'),
         (u'其他', u'其他'),
+        (u'收入', u'收入'),
     )
 
     id = IntegerField(label='ID')
