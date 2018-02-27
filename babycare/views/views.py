@@ -4,6 +4,7 @@
 import time
 import json
 import pdb
+import traceback
 
 from django.http import HttpResponse
 from django.utils import timezone
@@ -98,7 +99,7 @@ class RedEnvelopeViewSet(CustomModelViewSet):
             return super(RedEnvelopeViewSet, self).get_queryset().order_by("-id")
         else:
             user_id = BabyUser.objects.get(user=user).id
-            return super(RedEnvelopeViewSet, self).get_queryset().filter(user_id=user_id).order_by("-id")
+            return super(RedEnvelopeViewSet, self).get_queryset().filter(baby_id=user_id).order_by("-id")
 
     def create(self, request, *args, **kwargs):
         try:
