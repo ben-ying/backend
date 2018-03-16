@@ -13,9 +13,9 @@ from rest_framework.authtoken.models import Token
 from rest_framework.pagination import PageNumberPagination
 
 from backend.settings import OSS_ACCESS_KEY_ID, OSS_ACCESS_KEY_SECRET, OSS_BUCKET_NAME, OSS_ENDPOINT
-from constants import CODE_SUCCESS, CODE_INVALID_TOKEN, MSG_401, TEMP_IMAGE, MSG_402, CODE_EXCEPTION, CODE_DUPLICATE, \
+from .constants import CODE_SUCCESS, CODE_INVALID_TOKEN, MSG_401, TEMP_IMAGE, MSG_402, CODE_EXCEPTION, CODE_DUPLICATE, \
     MSG_403, TYPE_IMAGE, TEMP_VIDEO, DIR_EVENT_IMAGE, DIR_EVENT_VIDEO
-from constants import MIN_PASSWORD_LEN
+from .constants import MIN_PASSWORD_LEN
 
 
 class CustomModelViewSet(viewsets.ModelViewSet):

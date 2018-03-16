@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from models import BabyUser, Verify, Like, Feedback, Comment, AppInfo, RedEnvelope, Iaer
-from models import Event
+from .models import BabyUser, Verify, Like, Feedback, Comment, AppInfo, RedEnvelope, Iaer
+from .models import Event
 
 
 class BabyAdmin(admin.ModelAdmin):

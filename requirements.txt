@@ -1,8 +1,9 @@
-Django==1.10.4
+#Django==1.10.4
+Django==2.0.2
 Pillow # image
 validate_email # valid email
-pyDNS # http://pydns.sourceforge.net/
-psycopg2 # Postgres, ubuntu use pip install, mac download app(http://postgresapp.com)
+#pyDNS # http://pydns.sourceforge.net/
+psycopg2 # Postgres, ubuntu use pip install, mac download app(http://postgresapp.com), Raspbian: https://github.com/neilcollins/piconga/wiki/Server-Install:-Raspberry-Pi(version: 9.6)
 gunicorn # https://github.com/benoitc/gunicorn(a WSGI HTTP Server for UNIX)
 djangorestframework # django rest framework
 pygments  # We'll be using this for the code highlighting
@@ -22,3 +23,5 @@ coreapi-cli # coreapi get http://127.0.0.1:8000/schema/; coreapi action users li
 #flask_gravatar # use for pgadmin
 #sqlparse # use for pgadmin
 oss2
+#Apache for Raspbian: sudo apt-get install apache2 libapache2-mod-wsgi
+
