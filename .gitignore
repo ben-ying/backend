@@ -104,3 +104,5 @@ logs/*
 media/*
 
 .idea
+*.swp
+*/*.swp
