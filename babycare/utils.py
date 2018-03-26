@@ -25,7 +25,7 @@ class CustomModelViewSet(viewsets.ModelViewSet):
 def json_response(result, code=CODE_SUCCESS, message=''):
     response_data = dict()
     response_data['code'] = code
-    response_data['message'] = unicode(message)
+    response_data['message'] = str(message)
     response_data['result'] = result
     return HttpResponse(json.dumps(response_data), content_type="application/json")
 
@@ -33,7 +33,7 @@ def json_response(result, code=CODE_SUCCESS, message=''):
 def simple_json_response(code=CODE_SUCCESS, message=''):
     response_data = dict()
     response_data['code'] = code
-    response_data['message'] = unicode(message)
+    response_data['message'] = str(message)
     response_data['result'] = {}
 
     return HttpResponse(json.dumps(response_data), content_type="application/json")
