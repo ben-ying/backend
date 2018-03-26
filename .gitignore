@@ -100,7 +100,7 @@ ENV/
 # mypy
 .mypy_cache/
 
-logs
-media
+logs/*
+media/*
 
 .idea
