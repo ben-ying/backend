@@ -1527,6 +1527,7 @@ COPY babycare_iaer (id, money, category, money_type, remark, created, type, char
 400	-30	餐饮	0	o2	2018-03-25 21:25:03.062174+08	0	0	\N	2018-03-25 21:25:03.062577+08	\N	\N	7
 401	-80	孩子	0	米粉＋零食	2018-03-25 21:25:42.922035+08	0	0	\N	2018-03-25 21:25:42.92243+08	\N	\N	7
 402	-43	孩子	0	鞋子	2018-03-25 21:26:46.182147+08	0	0	\N	2018-03-25 21:26:46.182532+08	\N	\N	7
+403	-103	生活用品	0	MacBook网口转换器	2018-03-26 10:51:47.66997+08	0	0	\N	2018-03-26 10:51:47.670316+08	\N	\N	10
 \.
 
 
@@ -1534,7 +1535,7 @@ COPY babycare_iaer (id, money, category, money_type, remark, created, type, char
 -- Name: babycare_iaer_id_seq; Type: SEQUENCE SET; Schema: public; Owner: ben
 --
 
-SELECT pg_catalog.setval('babycare_iaer_id_seq', 402, true);
+SELECT pg_catalog.setval('babycare_iaer_id_seq', 403, true);
 
 
 --
