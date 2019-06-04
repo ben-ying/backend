@@ -233,6 +233,7 @@ def login_view(request):
                     response_data = BabyUserSerializer(baby).data
                     if Token.objects.filter(user=user):
                         response_data['token'] = Token.objects.get(user=user).key
+                        response_data['password'] = password
                         return json_response(response_data, CODE_SUCCESS, MSG_LOGIN_SUCCESS)
                     else:
                         return invalid_token_response()

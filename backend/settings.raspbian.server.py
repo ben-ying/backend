@@ -5,7 +5,7 @@ SECRET_KEY = '!(poief@tj(fc*o3hifd6a2^$(1qk!m)hv-uug2eh)anp^9u5%'
 #DEBUG = False
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.1.201', 'raspbian-backend.ddns.net']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.1.201', '192.168.0.201', '192.168.0.200', 'raspbian-backend.ddns.net', 'raspberrypi-server.ddns.net', 'raspberry-server.ddns.net', 'raspberry-project.ddns.net', '107.182.27.191', '3.13.2.78']
 
 
 DATABASES = { 
