@@ -2,9 +2,9 @@ from .settings_common import *
 
 
 SECRET_KEY = '!(poief@tj(fc*o3hifd6a2^$(1qk!m)hv-uug2eh)anp^9u5%'
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['bensbabycare.com', 'www.bensbabycare.com', 'http://120.55.48.57', 'www.mybackend.xyz', 'mybackend.xyz']
+ALLOWED_HOSTS = ['bensbabycare.com', 'www.bensbabycare.com', '120.55.48.57', 'www.mybackend.xyz', 'mybackend.xyz']
 
 
 DATABASES = { 
