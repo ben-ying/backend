@@ -1,5 +1,7 @@
 # backend
 
+### Deprecated，refer to [DjangoApps](https://github.com/ben-ying/DjangoApps)
+
 #### Python3.5.3 
 #### Django 2.0.2
 #### Raspbian install postsql
